@@ -56,7 +56,7 @@ def runPeelingCycles(pedigree, peelingInfo, args, singleLocusMode=False):
                         peelingInfo.nLoci, 0.5, dtype=np.float32
                     )
     if args.est_alt_allele_prob:
-        if len(pedigree.AAP) > 1:
+        if args.alt_allele_prob_file is not None and len(pedigree.AAP) > 1:
             warnings.warn(
                 "-est_alt_allele_prob will overwrite any differences between metafounders. To avoid this, please use -update_alt_allele_prob instead"
             )
